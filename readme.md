@@ -20,7 +20,7 @@
 ### Clone the Repository
 Clone the repository to your local machine:
 ```bash
-   git Clone    
+   git clone  https://github.com/TrinhVinh2003/Miniprj2-Simple_object_detection.git   
     cd vehicle-detection
 ```
 ## Usage
