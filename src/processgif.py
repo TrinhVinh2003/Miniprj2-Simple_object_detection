@@ -1,18 +1,22 @@
 import cv2
 import imageio
 
-def video_to_gif(input_video_path, output_gif_path, fps=10):
+def video_to_gif(input_video_path, output_gif_path, fps=10, duration=2):
     cap = cv2.VideoCapture(input_video_path)
     frames = []
     
-    # Đọc từng khung hình và thêm vào danh sách frames
-    while cap.isOpened():
+    # Tính số lượng khung hình tối đa cần cho 2 giây GIF
+    max_frames = fps * duration
+    frame_count = 0
+    
+    while cap.isOpened() and frame_count < max_frames:
         ret, frame = cap.read()
         if not ret:
             break
         # Chuyển đổi màu cho khung hình
         frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         frames.append(frame_rgb)
+        frame_count += 1
     
     cap.release()
     
