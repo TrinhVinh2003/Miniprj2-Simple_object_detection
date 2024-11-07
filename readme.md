@@ -44,4 +44,4 @@ vehicle-detection-tracking/
 ```
 
 ### Video demo
-![Vehicle Detection Demo](output/video.gif)
+![Vehicle Detection Demo](src/output/video.gif)
